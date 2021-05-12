@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MessageComponent } from './message/message.component';
 import { NotebookComponent } from './notebook/notebook.component';
@@ -13,7 +13,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { FormsModule  } from '@angular/forms';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
