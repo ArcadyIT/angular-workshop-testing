@@ -2,12 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductsService {
-
-  getProducts(): Observable<[]>  {
-    return Observable.create(observer => {
+  getProducts(): Observable<[]> {
+    return new Observable<any>((observer) => {
       setTimeout(() => {
         observer.next([
           { name: 'Shampoo Bottle', price: this.getRandomPrice() },

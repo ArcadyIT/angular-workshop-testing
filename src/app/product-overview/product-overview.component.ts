@@ -8,15 +8,16 @@ import { ProductsService } from './products.service';
     <h3>Products</h3>
     <button (click)="getLatestPrices()">Refresh Prices</button>
     <ul>
-      <li *ngFor="let product of products | async">{{product.name}} - {{product.price}}</li>
+      <li *ngFor="let product of products | async">
+        {{ product.name }} - {{ product.price }}
+      </li>
     </ul>
-  `
+  `,
 })
 export class ProductOverviewComponent implements OnInit {
+  products!: Observable<{ name: string; price: number }[]>;
 
-  products: Observable<[]>;
-
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
     this.getLatestPrices();

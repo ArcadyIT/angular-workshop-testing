@@ -4,16 +4,17 @@ import { NoteService } from './note.service';
 @Component({
   selector: 'app-notebook',
   template: `
-    <h3>Latest message: <i>{{latestMessage}}</i></h3>
-    <input #input type="text" placeholder="Write down your thoughts...">
+    <h3>
+      Latest message: <i>{{ latestMessage }}</i>
+    </h3>
+    <input #input type="text" placeholder="Write down your thoughts..." />
     <button (click)="saveMessage(input.value)">Save</button>
-  `
+  `,
 })
 export class NotebookComponent {
+  latestMessage!: string;
 
-  latestMessage: string;
-
-  constructor(private noteService: NoteService) { }
+  constructor(private noteService: NoteService) {}
 
   saveMessage(value: string) {
     if (value == null || value === '') {

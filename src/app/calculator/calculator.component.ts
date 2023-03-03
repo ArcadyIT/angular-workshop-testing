@@ -3,18 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.scss']
+  styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent implements OnInit {
+  value1!: string;
+  value2!: string;
+  result!: number;
 
-  value1: string;
-  value2: string;
-  result: number;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onCalculate() {
     if (+this.value2 === 0) {
@@ -23,5 +21,4 @@ export class CalculatorComponent implements OnInit {
 
     this.result = +this.value1 / +this.value2;
   }
-
 }
